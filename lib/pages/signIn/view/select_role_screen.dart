@@ -13,6 +13,8 @@ class SelectRoleScreen extends StatelessWidget {
   DateTime datetime = DateTime.now();
   DateTime dateA = DateTime(2022, 4, 20);
 
+  SelectRoleScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -355,7 +357,7 @@ class SelectRoleScreen extends StatelessWidget {
   }
 
   onTapGroup1() {
-    //Get.toNamed(AppRoutes.signIn1Screen);
+    Get.toNamed(AppRoutes.homeScreen);
   }
 
   onTapGroup2() {

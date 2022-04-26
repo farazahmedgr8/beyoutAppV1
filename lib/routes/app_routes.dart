@@ -20,6 +20,8 @@
 // import 'package:faraz_s_application/presentation/home_individual_screen/binding/home_individual_binding.dart';
 // import 'package:faraz_s_application/presentation/app_navigation_screen/app_navigation_screen.dart';
 // import 'package:faraz_s_application/presentation/app_navigation_screen/binding/app_navigation_binding.dart';
+import 'package:beyoutapptest/pages/homeScreen/binding/home_screen_binding.dart';
+import 'package:beyoutapptest/pages/homeScreen/view/home_screen.dart';
 import 'package:beyoutapptest/pages/signIn/binding/select_role_binding.dart';
 import 'package:beyoutapptest/pages/signIn/view/select_role_screen.dart';
 import 'package:beyoutapptest/pages/splash/binding/splash_binding.dart';
@@ -33,6 +35,7 @@ class AppRoutes {
 
   static String splashScreen = '/splash_screen';
   static String selectRoleScreen = '/select_role_screen';
+  static String homeScreen = '/home_screen';
 
   // static String signInScreen = '/sign_in_screen';
   //
@@ -60,6 +63,8 @@ class AppRoutes {
     GetPage(
       name: splashScreen,
       page: () => SplashScreen(),
+      transition: Transition.fade,
+      transitionDuration: const Duration(milliseconds: 1000),
       bindings: [
         SplashBinding(),
       ],
@@ -67,9 +72,20 @@ class AppRoutes {
     GetPage(
       name: selectRoleScreen,
       page: () => SelectRoleScreen(),
-        transition: Transition.zoom,
+      transition: Transition.fade,
+      transitionDuration: const Duration(milliseconds: 1000),
+        //customTransition: PageTransition(type: PageTransitionType.rightToLeftWithFade,
         bindings: [
         SelectRoleBinding(),
+      ],
+    ),
+    GetPage(
+      name: homeScreen,
+      page: () => HomeScreen(),
+      transition: Transition.fade,
+      transitionDuration: const Duration(milliseconds: 1000),
+      bindings: [
+        HomeScreenBinding(),
       ],
     ),
     /*
@@ -129,14 +145,7 @@ class AppRoutes {
         ListingInnerBinding(),
       ],
     ),
-    GetPage(
-      name: homeIndividualScreen,
-      page: () => HomeIndividualScreen(),
-      bindings: [
 
-        HomeIndividualBinding(),
-      ],
-    ),
     GetPage(
       name: appNavigationScreen,
       page: () => AppNavigationScreen(),
@@ -149,6 +158,8 @@ class AppRoutes {
     GetPage(
       name: initialRoute,
       page: () => SplashScreen(),
+      transition: Transition.downToUp,
+      transitionDuration: Duration(milliseconds: 1000),
       bindings: [
         SplashBinding(),
       ],
