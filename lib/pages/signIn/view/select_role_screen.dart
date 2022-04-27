@@ -135,8 +135,6 @@ class SelectRoleScreen extends StatelessWidget {
                                                           //REALTOR BUTTON--->
                                                           GestureDetector(
                                                               onTap: () {
-
-
                                                               },
                                                               child: Container(
                                                                 width: 180,
